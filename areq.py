@@ -7,7 +7,7 @@ async def fetch_url(url: str, session: ClientSession) -> str:
     response = await session.request(method="GET", url=url)
     response.raise_for_status()
     text = await response.text()
-    print(text.strip())
+    return text.strip()
 
 async def get_url():
     async with ClientSession() as session:
